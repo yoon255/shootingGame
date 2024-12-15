@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //좌우 방향키 눌렀을때, 좌우로 이동
+
         float hori =
         Input.GetAxis("Horizontal"); //좌우방향키, a,d키를 눌렀을때
                                      //-1(왼쪽) ~ 1(오른쪽) 값을 생성
@@ -24,7 +26,7 @@ public class Movement : MonoBehaviour
         Input.GetAxis("Vertical"); //상하방향키, w,s키를 눌렀을때
                                    //-1(아래쪽) ~ 1(위쪽) 값을 생성
 
-        playerRB.velocity = new Vector2() * speed;
+        playerRB.velocity = new Vector2(hori,0) * speed;
 
         //[가정]
         //왼쪽방향키를 누름. hori = -1
